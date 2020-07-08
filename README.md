@@ -1,4 +1,4 @@
-# vue-model
+# vue-class-model
 在vue中使用面向对象class开发，使class的公有数据双向绑定；
 
 如果不需要使用双向绑定可以将属性通过Symbol私有化
@@ -6,9 +6,9 @@
 ## 安装
 
 ```shell
-npm install 
+npm install vue-class-model
 or 
-yarn add 
+yarn add vue-class-model
 ```
 
 ## 配置
@@ -38,7 +38,7 @@ class Hello{
 ```javascript
 // main.js
 import Vue from 'vue'
-import Models from ''
+import Models from 'vue-class-model'
 import Hello from './model/hello.js'
 Vue.use(Models)
 
