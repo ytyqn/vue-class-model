@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-model-test</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id='app'>{{$model.hello.msg}} {{text}} <button @click="changHello">change</button></div>
+    <script src='./index.js'></script>
+    <script>
+        class Hello{
+            constructor(){
+                this.msg = 'Hello'
+            }
+            setMsg(v){
+                this.msg = v
+            }
+        }
+    </script>
+    <script>
+        Vue.use(Models)
+        const model = new Models({
+            hello: Hello
+        })
+        new Vue({
+            el: '#app',
+            model,
+            data(){
+                return{
+                    text: 'World'
+                }
+            },
+            methods: {
+             changHello(){
+                //  this.$model.hello.msg = 'Bye'
+                this.$model.hello.setMsg('Bye Bye')
+                // console.log(this.$model.hello.msg)
+             }   
+            }
+        })
+    </script>
+</body>
+</html>
