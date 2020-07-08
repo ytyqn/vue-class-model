@@ -7,7 +7,7 @@ this.$power
 */
 // eslint-disable-next-line no-unused-vars
 let _Vue = null
-class Models {
+export default class Models {
   static install (Vue) {
     // 1. 判断当前插件是否被安装
     if (Models.install.installed) {
@@ -17,7 +17,6 @@ class Models {
     // 2. 把Vue构造函数记录到全局变量
     _Vue = Vue
     // 3. 把创建Vue实例时候传入的router对象注入到Vue实例上
-    // _Vue.prototype.$router = this.$options.router
     // 混入
     _Vue.mixin({
       beforeCreate () {
