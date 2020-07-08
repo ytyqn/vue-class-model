@@ -1,5 +1,5 @@
 {
-  "name": "vue-model",
+  "name": "vue-class-model",
   "version": "0.1.0",
   "description": "use Class Model develop Vue",
   "main": "dist/index.js",
