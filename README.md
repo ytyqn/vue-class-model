@@ -20,7 +20,6 @@ class Hello{
   // 目前需要自己创建init方法初始化数据
   constructor(){
     // msg双向绑定，数据修改后组件会更新
-    // 目前对对象，数组可能存在bug，正在后续开发
     this.msg = 'Hello'
   }
   // 初始化方法名不一定是init，你可以自己命名

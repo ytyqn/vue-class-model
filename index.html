@@ -22,7 +22,8 @@
     <script>
         Vue.use(Models)
         const model = new Models({
-            hello: Hello
+            // mode: 'none',
+            models:{hello: Hello}
         })
         new Vue({
             el: '#app',

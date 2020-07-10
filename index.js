@@ -107,7 +107,7 @@ class Models {
   保留vue的原有功能，两种方式混合使用，推荐组件复用多使用该功能，组件使用少可以考虑Vue原功能
   */
  createComponent(Vue){
-    let components = this.options.components
+    let components = this.options.components || {}
     for(let i of Object.keys(components)){
       Vue.components(i,{
         render(h) {
