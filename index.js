@@ -60,7 +60,7 @@ class Models {
     let mode = this.options.mode || 'model'
     for (const i of Object.keys(models)) {
       // 模块初始化
-      const model = new models[i]()
+      const model = models[i]
       const dataTemp = {}
       for (const m of Object.keys(model)) {
         dataTemp[m] = model[m]
@@ -88,6 +88,9 @@ class Models {
           }
         },
         set: function (obj, prop, value) {
+          // if(typeof obj[prop] == 'function'){
+          //   throw new Error('this is a Function, you can\'t')
+          // }
           if (prop in obj) {
             obj[prop] = value
             self.dataMap[i][prop] = value
@@ -109,10 +112,10 @@ class Models {
  createComponent(Vue){
     let components = this.options.components || {}
     for(let i of Object.keys(components)){
-      Vue.components(i,{
+      Vue.component(i,{
         render(h) {
           const component = components[i]
-          return h(compontent)
+          return h(component)
         }
       })
     }

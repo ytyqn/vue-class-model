@@ -7,13 +7,18 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id='app'>{{$model.hello.msg}} {{text}} <button @click="changHello">change</button></div>
+    <div id='app'>
+        {{$hello.msg}} {{text}} {{$hello.name}}
+        <button @click="changHello">change</button>
+        <input type="text" v-model="$hello.msg" />
+    </div>
     <script src='./index.js'></script>
     <script>
         class Hello{
             constructor(){
                 this.msg = 'Hello'
             }
+            name='jjj'
             setMsg(v){
                 this.msg = v
             }
@@ -22,8 +27,8 @@
     <script>
         Vue.use(Models)
         const model = new Models({
-            // mode: 'none',
-            models:{hello: Hello}
+            mode: 'none',
+            models:{$hello: new Hello()}
         })
         new Vue({
             el: '#app',
